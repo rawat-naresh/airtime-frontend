@@ -1,0 +1,97 @@
+
+  .data{
+    height: 100%;
+    width: 100%;
+}
+.left-col{
+    /* background-image: url('../../../assets/img/twitter-back.png'); */
+    background: linear-gradient(#25b2b9, #ff5e3ad1);
+    overflow: hidden;
+    position: relative;
+    padding: 140px;
+}
+.left-col-data{
+    color: #fff;
+    text-align: center;
+    max-width: 400px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 auto;
+}
+span{
+    color: white;
+}
+.left-col-data li{
+    list-style-type: none;
+    text-align: left;
+    line-height: 80px;
+}
+.login-btn{
+    color: #1da1f2;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #1da1f2;
+    border-radius: 5px;
+    padding: 0;
+    height: 55px;
+}
+.forgot-password a{
+    font-size: 14px;
+    color: rgb(146, 146, 146);
+}
+.placeholder-size{
+    font-size: 14px;
+}
+.right-col{
+    background: #f1faff;
+}
+.right-col-form{
+    padding: 40px;
+    overflow: hidden;
+    position: relative;
+}
+.right-col-data{
+    margin: 0 auto;
+    max-width: 380px;
+    overflow: hidden;
+    position: relative;
+}
+.top-data p{
+    font-weight: bold;
+    font-size: 26px;
+}
+.middle-data{
+    font-weight: bold;
+    font-size: 18px;    
+}
+.bottom-data{
+    
+}
+.btn-signup{
+    color: #ffffff;
+    background-color: #1da1f2;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #1da1f2;
+    border-radius: 30px;
+    height: 35px;
+    width: 100%;
+    margin: 0 auto;
+}
+.btn-signup a{
+    color: #ffffff;
+    background-color: #1da1f2;
+    text-decoration: none;
+}
+.btn-login{
+    color: #1da1f2;
+    background-color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #1da1f2;
+    border-radius: 30px;
+    width: 100%;
+    margin: 0 auto;
+}

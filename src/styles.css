@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/*
+ */
+ @import "./assets/stylesheets/bootstrap.css";
+ @import "./assets/stylesheets/bootstrap-grid.css";
+ @import "./assets/stylesheets/theme-styles.css";
+ @import "./assets/stylesheets/blocks.css";

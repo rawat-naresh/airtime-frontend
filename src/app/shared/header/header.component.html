@@ -1,3 +1,35 @@
-<p>
-  header works!
-</p>
+
+<!-- Show this when the user is Authenticated --> 
+<div class="row top-bar" *appShowAuthed="true" style="position:fixed;width:100%;z-index:777">
+  <div class="col col-md-12">
+    <div class="row" style="padding-left:22px;">
+      <div class="col col-md-5 logo-site">
+        <ul>
+          <li> <a routerLink="/" ><i class=" nav-icon fa fa-home"></i>Home</a> </li>
+          <li> <a routerLink="/notifications" ><i class=" nav-icon fa fa-bell"></i>Notifications</a> </li>
+          <li> <a routerLink="/messages" ><i class=" nav-icon fa fa-envelope"></i>Messages</a> </li>
+          <li> <a routerLink="/settings" ><i class="fas fa-cog"></i>Settings</a> </li>
+        </ul>
+      </div>
+      <div class="col col-md-2 logo-site">
+        <a routerLink="/" routerLinkActive="active" style="color:rgb(88, 127, 255);padding-right: 54px;"><img src="../../../assets/img/airtime.png" style="max-width:70px;" /></a>
+      </div>
+      <div class="col col-md-4 logo-site">
+        <ul>
+          <li>
+            <input type="text" class="form-control placeholder-size-search" placeholder="Search" />
+            <button style="border-radius:55px;"><i class="fas fa-search"></i></button>
+          </li>
+          <li>
+            <a routerLink="/profile" routerLinkActive="active"><i class=" nav-icon fa fa-user-circle"></i>Profile</a>
+          </li>
+            <li>
+            <a style="padding-right:0px;"><i class="nav-icon fa fa-sign-out-alt"></i>Logout</a>
+          </li>
+        </ul>    
+      </div>
+    </div>
+  </div>
+</div> 
+
+

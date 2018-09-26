@@ -1,0 +1,119 @@
+.top-bar{
+    background-color:rgb(255, 254, 254);
+    text-align: center;
+    padding: 5px 0px;
+    margin: 0px -10px;
+    border-bottom: 1px solid rgb(180, 180, 180);
+    font-family:monospace;
+    font-size: 20px;
+}
+.top-bar a{
+    text-decoration: none;
+}
+.top-bar-data{
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.top-bar ul li{
+    float: left;
+    list-style: none;
+}
+.top-bar ul li a{
+    font-size: 16px;
+    padding:10px;
+    text-decoration:none;
+    color:rgb(90, 90, 90);
+}
+.top-bar ul li a:hover{
+    color: rgb(60, 106, 233);
+}
+.logo-site{
+    margin: 0 auto;
+}
+input{
+    float: left;
+}
+#search{
+    margin-left: -60px;
+}
+.btn-search{
+}
+.placeholder-size-search{
+    background-color: rgb(216, 216, 216);
+    font-size: 12px;
+    height: 30px;
+    width:90px;
+    border-radius: 25px;
+}
+.placeholder-size{
+    font-size: 14px;
+}
+
+
+
+/* 
+header{
+    background-color:rgb(255, 254, 254); 
+    text-align: center;
+    font-weight: 200;
+    border-bottom: 2px solid rgba(119, 119, 119, 0.438);
+    font-family:monospace;
+    position: fixed;
+    top: 0;
+    z-index: 255;
+    width: 100%;
+}
+.header-content-wrapper {
+    width:80%;
+    margin:auto;
+    font-size: 16px;
+}
+.header-content-wrapper ul {
+    list-style-type: none;
+    
+}
+.header-content-wrapper ul li a {
+    color:rgb(41, 41, 41);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    
+}
+
+.header-content-wrapper ul a:hover,i:hover{
+    color:#ff5e3a;
+}
+
+.header-content-wrapper  .left-div ul li a {
+    float: left;
+    
+}
+.header-content-wrapper  .right-div ul li a {
+    float: right;
+    
+}
+
+.left-div {
+}
+.mid-div a{
+    font-size: 22px;
+    font-weight: bold;
+    
+}
+.mid-div a i{
+    font-weight: normal;
+    
+}
+
+.right-div {
+    
+}
+.nav-icon {
+    padding-right: 5px;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(102, 99, 99);
+}    */
+
+

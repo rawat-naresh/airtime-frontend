@@ -74,7 +74,13 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/javascripts/bootstrap.js",
+              "src/assets/javascripts/jquery-3.2.0.min.js",
+              "src/assets/javascripts/main.js",
+              "src/assets/javascripts/material.min.js",
+              "src/assets/javascripts/theme-plugins.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"

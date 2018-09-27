@@ -8,7 +8,8 @@ import { AppComponent } from './app.component';
 /* Feature module imports */
 import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
-import { AppRoutingModule } from 'src/app/app.routing.module';
+import { AppRoutingModule } from './app.routing.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { AppRoutingModule } from 'src/app/app.routing.module';
   imports: [
     BrowserModule,
     SharedModule,
+    CoreModule,
     HomeModule,
     AppRoutingModule,
     

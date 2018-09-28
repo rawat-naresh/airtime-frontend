@@ -21,6 +21,7 @@ export class UserService {
 
     populate() {
         if(this.jwtService.getToken()) {
+            // console.log("------------------Populate-------:",this.jwtService.getToken());
             this.apiService.get('/user')
                 .subscribe(
                     data => this.setAuth(data.user),
@@ -54,6 +55,16 @@ export class UserService {
                 tap(data => this.setAuth(data.user))
             );
     }
+
+    checkUser(username) {
+        return this.apiService.get('/users/check/'+ username);
+    }
+
+    signup(details):Observable<User>{
+        return this.apiService.post('/users/signup',{user:details});
+    }
+
+
 
 
 

@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common/';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import {ToastModule} from 'primeng/toast';
 
 /*import { FollowerComponent } from './follower-helpers/follower/follower.component';
 import { FollowerListComponent } from './follower-helpers/follower-list/follower-list.component';
@@ -20,7 +21,7 @@ import { ShowAuthedDirective } from './show-authed.directive';
 import { FooterComponent } from './footer/footer.component';
 import { TrendingListComponent } from './trending-helpers/trending-list/trending-list.component';
 import { SuggestionListComponent } from './suggestion-helpers/suggestion-list/suggestion-list.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -28,7 +29,9 @@ import { SuggestionListComponent } from './suggestion-helpers/suggestion-list/su
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    ToastModule,
+    BrowserAnimationsModule
   ],
   declarations: [
    /*  FollowerComponent, 
@@ -56,6 +59,9 @@ import { SuggestionListComponent } from './suggestion-helpers/suggestion-list/su
     TrendingListComponent,
     SuggestionListComponent,
     ShowAuthedDirective,
+    BrowserAnimationsModule,
+    ToastModule,
+
   ]
   
 })

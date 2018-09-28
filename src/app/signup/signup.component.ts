@@ -1,52 +1,81 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
+import { filter, distinctUntilChanged, debounceTime} from 'rxjs/operators';
+import { UserService } from '../core/services/user.service';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
-
+export class SignupComponent implements OnInit{
+  usernameExists:boolean = false;
+  signupSuccessful:boolean = false;
   signupForm : FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private userService: UserService) {
     this.signupForm = fb.group({
-      "firstname" : ['',Validators.compose([
+      "firstname" : ['',[
         Validators.required,
-        Validators.minLength(3)
-      ])],
-      "lastname" : ['',Validators.compose([
+        Validators.pattern("^([a-zA-Z]*)$"),
+      ]],
+      "lastname" : ['',[
         Validators.required,
-        Validators.minLength(2)
-      ])],
-      "username" : ['',Validators.required],
+        Validators.pattern("^([a-zA-Z]*)$"),
+      ]],
+      "username" : ['',[
+        Validators.required,
+        Validators.pattern("^([a-zA-Z_]*)$"),
+      ]],
       "email" : ['',[
         Validators.required,
-        Validators.pattern("")
+        Validators.pattern("^([a-zA-Z0-9.]+)@([a-zA-Z]+)\.([a-zA-Z]{2,5})$")
       ]],
       "password" : ['',Validators.compose([
         Validators.required,
-        Validators.minLength(4)
-      ])]
-    });
+        //Validators.pattern("^(a-ZA-Z)$")
+      ])],
+      "cpassword":['', [
+        Validators.required,
+      ]]
 
-    // this.signupForm.valueChanges
-    //                   .filter(data => this.signupForm.valid)
-    //                   .map(data => {
-    //                     data.lastUpdated = new Date();
-    //                     return data;
-    //                   })
-    //                   .subscribe(data => {
-    //                     console.log(JSON.stringify(data));
-    //                   });
+    },{validator:this.passwordMatchValidator});
+
+  }
+
+  passwordMatchValidator(formGroup: FormGroup) {
+    return formGroup.get('password').value === formGroup.get('cpassword').value
+    ? null : {'mismatch': true};
   }
 
   onSubmit(){
-     // console.log(JSON.stringify(this.signupForm.value)+"Form submitted successfully");
+    if(this.signupForm.valid){
+      console.log("okay");
+      this.userService.signup(this.signupForm.value).subscribe( data => {
+        console.log(data);
+        this.signupSuccessful = true;
+        this.signupForm.reset();
+      })
+      // console.log(this.signupForm.value);
+    }
   }
 
   ngOnInit() {
+    this.signupForm.controls['username'].valueChanges.pipe(
+      filter( username => this.signupForm.controls['username'].valid),
+      debounceTime(500),
+      distinctUntilChanged(),
+     ).subscribe(username => {
+      this.userService.checkUser(username).subscribe(
+        (data)=>{
+          this.usernameExists = true;
+        },
+        (error)=>{
+          this.usernameExists = false;
+        }
+    
+    )
+     });
   }
 
 }

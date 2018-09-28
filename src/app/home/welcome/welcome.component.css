@@ -1,8 +1,4 @@
 
-  .data{
-    height: 100%;
-    width: 100%;
-}
 .left-col{
     /* background-image: url('../../../assets/img/twitter-back.png'); */
     background: linear-gradient(#25b2b9, #ff5e3ad1);
@@ -13,14 +9,13 @@
 .left-col-data{
     color: #fff;
     text-align: center;
+    height: 300px;
     max-width: 400px;
     font-size: 18px;
     font-weight: bold;
     margin: 0 auto;
 }
-span{
-    color: white;
-}
+
 .left-col-data li{
     list-style-type: none;
     text-align: left;
@@ -35,9 +30,15 @@ span{
     padding: 0;
     height: 55px;
 }
-.forgot-password a{
+.forgot-password {
+    padding-top:20px;
+    padding-bottom: 20px; 
     font-size: 14px;
     color: rgb(146, 146, 146);
+}
+
+.forgot-password span {
+    padding-right:10px;
 }
 .placeholder-size{
     font-size: 14px;
@@ -51,6 +52,7 @@ span{
     position: relative;
 }
 .right-col-data{
+    padding-top: 50px;
     margin: 0 auto;
     max-width: 380px;
     overflow: hidden;
@@ -64,34 +66,9 @@ span{
     font-weight: bold;
     font-size: 18px;    
 }
-.bottom-data{
-    
+   
+.group{
+    margin-bottom: 18px;
+
 }
-.btn-signup{
-    color: #ffffff;
-    background-color: #1da1f2;
-    text-align: center;
-    font-size: 14px;
-    font-weight: bold;
-    border: 1px solid #1da1f2;
-    border-radius: 30px;
-    height: 35px;
-    width: 100%;
-    margin: 0 auto;
-}
-.btn-signup a{
-    color: #ffffff;
-    background-color: #1da1f2;
-    text-decoration: none;
-}
-.btn-login{
-    color: #1da1f2;
-    background-color: #ffffff;
-    text-align: center;
-    font-size: 14px;
-    font-weight: bold;
-    border: 1px solid #1da1f2;
-    border-radius: 30px;
-    width: 100%;
-    margin: 0 auto;
-}
+

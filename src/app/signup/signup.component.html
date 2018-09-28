@@ -1,37 +1,105 @@
 
 
+
+<div class="container" style="padding-top:60px;">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      
+
  <div class="col col-md-12 data-inner">
     <div class="row">
-    
+        <p *ngIf="signupSuccessful">Sign up success</p>
+        <br>
         <h5 >Sign up to Airtime</h5>
-        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form-group" method="POST">
+        <form [formGroup]="signupForm" class="form-group" novalidate (ngSubmit)="onSubmit()">
           <div class="form-group">
             <div class="row form-group">
               <div class="col col-md-6">
-                <input type="text" formControlName="firstname" class="form-control placeholder-size" name="firstname" placeholder="First name" required />
+                <input type="text" formControlName="firstname" class="form-control placeholder-size"  placeholder="First name">
+                <div *ngIf="signupForm.controls['firstname'].errors && (signupForm.controls['firstname'].dirty || signupForm.controls['firstname'].touched)">
+                  <span *ngIf="signupForm.controls['firstname'].errors.required">
+                    firstname is required.
+                  </span>
+                  <span *ngIf="signupForm.controls['firstname'].errors.pattern">
+                  firstname is invalid.  
+                  </span>
+                </div>
+                
               </div>
               <div class="col col-md-6">
-                <input type="text" formControlName="lastname" class="form-control placeholder-size" name="lastname" placeholder="Last name" required />
+                <input type="text" formControlName="lastname" class="form-control placeholder-size"  placeholder="Last name">
+                <div *ngIf="signupForm.controls['lastname'].errors && (signupForm.controls['lastname'].dirty || signupForm.controls['lastname'].touched)">
+                    <span *ngIf="signupForm.controls['lastname'].errors.required">
+                      lastname is required.
+                    </span>
+                    <span *ngIf="signupForm.controls['lastname'].errors.pattern">
+                    lastname is invalid.  
+                    </span>
+                  </div>
               </div>
             </div>
             <div class="row form-group">
               <div class="col col-md-12">
-                <input type="text" formControlName="username" class="form-control placeholder-size" name="username" placeholder="Username" required minlength="4" />
+                <input type="text" formControlName="username" class="form-control placeholder-size"  placeholder="Username">
+                <div *ngIf="signupForm.controls['username'].errors && (signupForm.controls['username'].dirty || signupForm.controls['username'].touched)">
+                    <span *ngIf="signupForm.controls['username'].errors.required">
+                      username is required.
+                    </span>
+                    <span *ngIf="signupForm.controls['username'].errors.pattern">
+                    username is invalid.  
+                    </span>
+                </div>
+                <div *ngIf="signupForm.controls['username'].valid && usernameExists">
+                  <span>Username Already exists.</span>
+                </div>
               </div>
             </div>
             <div class="row form-group">
               <div class="col col-md-12">
-                <input type="text" formControlName="email" class="form-control placeholder-size" name="email" placeholder="Email" required />
+                <input type="text" formControlName="email" class="form-control placeholder-size"  placeholder="Email" >
+                <div *ngIf="signupForm.controls['email'].errors && (signupForm.controls['email'].dirty || signupForm.controls['email'].touched)">
+                    <span *ngIf="signupForm.controls['email'].errors.required">
+                      email is required.
+                    </span>
+                    <span *ngIf="signupForm.controls['email'].errors.pattern">
+                    email is invalid.  
+                    </span>
+                  </div>
               </div>
             </div>
             <div class="row form-group">
               <div class="col col-md-12">
-                <input type="password" formControlName="password" class="form-control placeholder-size" name="password" placeholder="Password" required />
+                <input type="password" formControlName="password" class="form-control placeholder-size"  placeholder="Password" >
+                <div *ngIf="signupForm.controls['password'].errors && (signupForm.controls['password'].dirty || signupForm.controls['password'].touched)">
+                    <span *ngIf="signupForm.controls['password'].errors.required">
+                      password is required.
+                    </span>
+                    <!-- <span *ngIf="signupForm.controls['password'].errors.pattern">
+                    password must be at least 8 character long and should contain 1 Uppercase, 1 lowercase and special symbol
+                    </span> -->
+                  </div>
               </div>
             </div>
+            <div class="row form-group">
+                <div class="col col-md-12">
+                  <input type="password" formControlName="cpassword" class="form-control placeholder-size"  placeholder="Confirm Password">
+                  <div *ngIf=" signupForm.controls['cpassword'].dirty || signupForm.controls['cpassword'].touched">
+                      <span *ngIf="signupForm.controls['cpassword'].errors?.required">
+                        confirm password is required.
+                      </span>
+
+                      <span *ngIf="signupForm.controls['password'].valid  && signupForm.errors?.mismatch">
+                          password mismatch.
+                      </span>
+                      
+                      
+                    </div>
+                    
+                </div>
+              </div>
             <div class="row form-group">
               <div class="col col-md-8">
-                <button type="submit" class="btn btn-primary" >Sign up</button>
+                <button type="submit" class="btn btn-primary" [disabled]="signupForm.invalid || usernameExists">Sign up</button>
               </div>
             </div>
           </div>
@@ -44,3 +112,10 @@
         </div>
       </div>
     </div>
+
+      
+      
+      
+      </div>
+    </div>
+  </div>

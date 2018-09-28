@@ -5,6 +5,10 @@ import { HttpTokenInterceptor } from './interceptors/http.token.interceptor';
 import { ApiService } from './services/api.service';
 import { JwtService } from './services/jwt.service';
 import { UserService } from './services/user.service';
+import { TweetService } from './services/tweet.service';
+import {MessageService} from 'primeng/api';
+
+
 
 @NgModule({
   imports: [
@@ -16,6 +20,8 @@ import { UserService } from './services/user.service';
     ApiService,
     JwtService,
     UserService,
+    TweetService,
+    MessageService,
   ]
 })
 export class CoreModule { }

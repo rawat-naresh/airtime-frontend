@@ -1,9 +1,12 @@
 export interface Tweet {
-    username:string,
-    firstname:string,
-    lastname:string,
-    profile:string,
-    tweet:{
-
-    }
+    
+        _id:string,
+        body:string,
+        likesCount:number,
+        reTweetsCount:number,
+        commentsCount:number,
+        attachments:string[],
+        isLiked: boolean,
+        createdAt:Date
+    
 }

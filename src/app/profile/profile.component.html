@@ -1,0 +1,171 @@
+<div class="container" style="padding-top:60px;">
+    <div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="ui-block">
+        <div class="top-header">
+          <div class="top-header-thumb">
+            <img src="../../../assets/img/top-header1.jpg" alt="nature">
+          </div>
+          <div class="profile-section">
+            <div class="row">
+              <div class="col-lg-5 col-md-5 ">
+                <ul class="profile-menu">
+                  <li>
+                    <a 
+                      routerLinkActive="active"
+                      [routerLinkActiveOptions]="{exact:true}"
+                      [routerLink]="['/profile',profile.username]">Tweets</a>
+                  </li>
+                  <li>
+                    <a
+                      routerLinkActive="active"
+                      [routerLinkActiveOptions]="{exact:true}" 
+                      [routerLink]="['/profile',profile.username,'likes']">Likes</a>
+                  </li>
+                  <li>
+                    <a
+                      routerLinkActive="active"
+                      [routerLinkActiveOptions]="{exact:true}" 
+                      [routerLink]="['/profile',profile.username,'re-tweets']">Re-tweets</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-5 ml-auto col-md-5">
+                <ul class="profile-menu">
+                  <li>
+                    <a [routerLink]="['/profile',profile.username,'followers']">Followers</a>
+                  </li>
+                  <li>
+                    <a
+                      routerLinkActive="active"
+                      [routerLinkActiveOptions]="{exact:true}" 
+                      [routerLink]="['/profile',profile.username,'following']">Following</a>
+                  </li>
+                  <li>
+                    <a
+                      routerLinkActive="active"
+                      [routerLinkActiveOptions]="{exact:true}" 
+                      [routerLink]="['/profile',profile.username,'settings']">Edit Profile</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="top-header-author">
+            <a href="02-ProfilePage.html" class="author-thumb">
+              <img src="../../../assets/img/author-main1.jpg" alt="author">
+            </a>
+            <div class="author-content">
+              <a href="02-ProfilePage.html" class="h4 author-name">{{profile.fullname}}</a>
+              <div class="country">{{profile.country ? profile.country: "NA"}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    
+    <!-- ... end Top Header -->
+
+<div class="container">
+  <div class="row">
+    <!-- Main Content -->
+    <main class="col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-xs-12">
+
+       <router-outlet></router-outlet> 
+
+      <a id="load-more-button" href="#" class="btn btn-control btn-more" data-load-link="items-to-load.html" data-container="newsfeed-items-grid"><svg class="olymp-three-dots-icon"><use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+
+    </main>
+    <!-- ... end Main Content -->
+
+<!-- Left Sidebar -->
+
+<div class="col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-12 col-xs-12">
+    <div class="ui-block">
+      <div class="ui-block-title">
+        <h6 class="title">Profile Intro</h6>
+      </div>
+      <div class="ui-block-content">
+        <a routerLink="/settings">Edit profile</a>
+        <ul class="widget w-personal-info item-block">
+          <li>
+            <span class="title">About Me:</span>
+            <span class="text">Hi, I’m James, I’m 36 and I work as a Digital Designer for the  “Daydreams” Agency in Pier 56.</span>
+          </li>
+          <li>
+            <span class="title">Favourite TV Shows:</span>
+            <span class="text">Breaking Good, RedDevil, People of Interest, The Running Dead, Found,  American Guy.</span>
+          </li>
+          <li>
+            <span class="title">Favourite Music Bands / Artists:</span>
+            <span class="text">Iron Maid, DC/AC, Megablow, The Ill, Kung Fighters, System of a Revenge.</span>
+          </li>
+        </ul>
+  
+      </div>
+    </div>
+  
+  </div>
+  
+  <!-- ... end Left Sidebar -->
+    
+     <!-- Right Sidebar -->
+
+     <aside class="col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-xs-12">
+        
+        
+        <div class="ui-block">
+          <div class="ui-block-title">
+            <h6 class="title">Follow Suggestions</h6>
+            <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+          </div>
+  
+          <ul class="widget w-friend-pages-added notification-list friend-requests">
+            <li class="inline-items">
+              <div class="author-thumb">
+                <img src="../../../assets/img/avatar38-sm.jpg" alt="author">
+              </div>
+              <div class="notification-event">
+                <a href="#" class="h6 notification-friend">Francine Smith</a>
+                <a href="#" class="accept-request">Follow</a>
+                
+              </div>
+              
+  
+            </li>
+            <li class="inline-items">
+                <div class="author-thumb">
+                  <img src="../../../assets/img/avatar38-sm.jpg" alt="author">
+                </div>
+                <div class="notification-event">
+                  <a href="#" class="h6 notification-friend">Francine Smith</a>
+                  <a href="#" class="accept-request">Follow</a>
+                </div>
+    
+              </li>
+              <li class="inline-items">
+                  <div class="author-thumb">
+                    <img src="../../../assets/img/avatar38-sm.jpg" alt="author">
+                  </div>
+                  <div class="notification-event">
+                    <a href="#" class="h6 notification-friend">Francine Smith</a>
+                    <a href="#" class="accept-request">Follow</a>
+                    
+                  </div>
+                  
+      
+                </li>
+  
+            
+          </ul>
+  
+        </div>
+      </aside>
+  
+      <!-- ... end Right Sidebar -->
+  
+
+  </div>
+</div>

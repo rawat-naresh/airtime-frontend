@@ -22,7 +22,7 @@ export class DashboardComponent {
             let tweet = this.processTweet(this.statusControl.value);
             this.tweetService.postTweet(tweet).subscribe(data=>{
                 console.log("posted");
-                this.statusControl.reset;
+                this.statusControl.reset();
                 this.addSingle();
                 
             },

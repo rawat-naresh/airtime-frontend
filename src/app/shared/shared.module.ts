@@ -14,14 +14,13 @@ import { FollowingListComponent } from './following-helpers/following-list/follo
 import { FooterComponent } from './footer/footer.component';
 import { TrendingComponent } from './trending-helpers/trending/trending.component';
 import { TrendingListComponent } from './trending-helpers/trending-list/trending-list.component';*/
-import { TweetListComponent } from './tweet-helpers/tweet-list/tweet-list.component';
-import { TweetComponent } from './tweet-helpers/tweet/tweet.component';
+import { TweetComponent } from './tweet/tweet.component';
+import { TweetSplitterPipe } from './tweet/tweet-splitter.pipe';
 import { HeaderComponent } from './header/header.component';
 import { ShowAuthedDirective } from './show-authed.directive';
 import { FooterComponent } from './footer/footer.component';
 import { TrendingListComponent } from './trending-helpers/trending-list/trending-list.component';
 import { SuggestionListComponent } from './suggestion-helpers/suggestion-list/suggestion-list.component';
-import { TweetSplitterPipe } from './tweet-helpers/tweet/tweet-splitter.pipe';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -41,7 +40,6 @@ import { TweetSplitterPipe } from './tweet-helpers/tweet/tweet-splitter.pipe';
     FollowingListComponent, 
     FooterComponent, 
     TrendingComponent, */
-    TweetListComponent, 
     TweetComponent, 
     HeaderComponent, 
     TrendingListComponent ,
@@ -61,7 +59,6 @@ import { TweetSplitterPipe } from './tweet-helpers/tweet/tweet-splitter.pipe';
     TrendingListComponent,
     SuggestionListComponent,
     TweetComponent,
-    TweetListComponent,
     ShowAuthedDirective,
     TweetSplitterPipe,
     // BrowserAnimationsModule,

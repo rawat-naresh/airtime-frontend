@@ -1,0 +1,180 @@
+
+  
+  <div class="ui-block">
+    <article class="hentry post has-post-thumbnail">
+
+      <div class="post__author author vcard inline-items">
+        <img src="../../../assets/img/avatar3-sm.jpg" alt="author">
+
+        <div class="author-date">
+          <a class="h6 post__author-name fn" href="#">{{tweet.username}}</a>
+          <div class="post__date">
+            <time class="published" datetime="2004-07-24T18:18">
+              
+              {{ tweet.tweet.createdAt | date:'medium' }} 
+            </time>
+          </div>
+        </div>
+
+        <!-- <div class="more" style="background-color:rgb(100, 100, 100);"><svg class="olymp-three-dots-icon"><use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use></svg>
+          <ul class="more-dropdown">
+            <li>
+              <a href="#">Edit Post</a>
+            </li>
+            <li>
+              <a href="#">Delete Post</a>
+            </li>
+            <li>
+              <a href="#">Turn Off Notifications</a>
+            </li>
+            <li>
+              <a href="#">Select as Featured</a>
+            </li>
+          </ul>
+        </div> -->
+
+      </div>
+
+      <p style="font-size:20px">
+        <span *ngFor="let word of (tweet.tweet.body | tweetSplitter)">
+          <span *ngIf="word.charAt(0) == '#'">
+            <a [routerLink]="['/hashtags',word.slice(1)]" style="color:#1414c8cc">{{word}} </a>
+          </span> 
+          <span *ngIf="word.charAt(0) == '@'">
+            <a [routerLink]="['/profile',word.slice(1)]" style="color:red">{{word}}</a>
+          </span> 
+          <span *ngIf="word.charAt(0) != '#' && word.charAt(0) != '@' ">
+            {{word}}
+          </span>
+        </span>
+
+
+
+      </p>
+
+      <div class="post-additional-info inline-items">
+        <div >
+          <button  class="post-add-icon inline-items" [className]="tweet.tweet.isLiked ? 'active' : 'inactive'"
+          style="border:none;background-color:transparent" (click)="toggleLikeTweet(tweet.tweet._id)">
+              <i class="fas fa-heart" ></i>
+          </button>
+          <button class="post-add-icon inline-items" style="border:none;background-color:transparent" (click)="toggleShowLikes(tweet.tweet._id)">
+              {{tweet.tweet.likesCount}} Likes
+          </button>
+          <!-- <span>{{tweet.likesCount}} Likes</span> -->
+        </div>
+        <div >
+          <button  class="post-add-icon inline-items" style="border:none;background-color:transparent" (click)="toggleShowComments(tweet.tweet._id)">
+              <i class="far fa-comment"></i>
+          </button>
+          
+          <span>{{tweet.tweet.commentsCount}} Comments</span>
+        </div>
+        <div >
+          <button class="post-add-icon inline-items" [className]="tweet.tweet.isRetweeted ? 'active' : 'inactive'"
+          style="border:none;background-color:transparent" (click)="toggleRTweet(tweet.tweet._id)">
+              <i class="fas fa-retweet"></i>
+          </button>
+          <button  class="post-add-icon inline-items" style="border:none;background-color:transparent" (click)="toggleShowRtweetedBy()">
+              {{tweet.tweet.reTweetsCount}} Retweets
+          </button>
+        </div>
+      </div>
+    </article>
+    <!-- Show list of users who liked this post -->
+    <ul class="comments-list" *ngIf="showLikedBy">
+        <li *ngFor="let user of likedBy">
+          <div class="post__author author vcard inline-items">
+            <img src="img/avatar10-sm.jpg" alt="author">
+
+            <div class="author-date">
+              <a class="h6 post__author-name fn" [routerLink]="['/profile',user.username]">@{{tweet.username}}</a>
+              <!-- <div class="post__date">
+                <time class="published" datetime="2017-03-24T18:18">
+                  5 mins ago
+                </time>
+              </div> -->
+            </div>
+          </div>
+        </li>
+       
+      </ul>
+    <!-- end:Show list of users who liked this post -->
+
+    
+    <!-- Re tweeted by -->
+
+    <ul class="comments-list" *ngIf="showRetweetedBy">
+        <li>
+          <div class="post__author author vcard inline-items">
+            <img src="img/avatar10-sm.jpg" alt="author">
+
+            <div class="author-date">
+              <a class="h6 post__author-name fn" href="#">Elaine Dreyfuss</a>
+              <div class="post__date">
+                <time class="published" datetime="2017-03-24T18:18">
+                  5 mins ago
+                </time>
+              </div>
+            </div>
+          </div>
+        </li>
+       
+      </ul>
+    <!-- end Re tweeted by -->
+
+
+    <ul class="comments-list"  *ngIf="showComments">
+        
+        <li class="has-children">
+            <form class="comment-form inline-items">
+
+								<div class="post__author author vcard inline-items">
+									<img src="img/author-page.jpg" alt="author">
+									<div class="form-group with-icon-right ">
+										<textarea class="form-control" placeholder="Write your comment." [formControl]="commentControl" ></textarea>
+										<div class="add-options-message">
+                      <button class="options-message" style="background-color:transparent;border:none" 
+                      [disabled]="commentControl.invalid"
+                      (click)="postComment(tweet.tweet._id)"
+                      >
+                        <i class="far fa-comment"></i>
+
+                      </button>
+										</div>
+									</div>
+								</div>
+
+							</form>
+          
+
+          <ul class="children">
+            <li *ngFor="let userComment of userComments">
+              <div class="post__author author vcard inline-items">
+                <img src="img/avatar8-sm.jpg" alt="author">
+
+                <div class="author-date">
+                  <a class="h6 post__author-name fn" href="#">{{userComment.username}}</a>
+                  <div class="post__date">
+                    <time class="published" datetime="2017-03-24T18:18">
+                      {{userComment.comment.createdAt | date:"medium"}}
+                    </time>
+                  </div>
+                </div>
+
+              </div>
+
+              <p>{{userComment.comment.body}}</p>
+
+              <a href="#" class="post-add-icon inline-items">
+                <i class="far fa-heart"></i>
+                <span>{{userComment.comment.likesCount}}</span>
+              </a>
+              <!-- <a href="#" class="reply">Reply</a> -->
+            </li>
+          </ul>
+
+        </li>
+
+      </ul>
+  </div>

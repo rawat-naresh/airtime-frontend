@@ -25,6 +25,12 @@ export class TweetService {
             .pipe(map(data => data.tweets));
     } 
 
+    getReTweets(username) {
+        console.log("GET RE-TWEETS:",username);
+        return this.apiService.get('/users/'+username+'/re-tweets')
+            .pipe(map(data => data.reTweets));
+    }
+
     getComments(tweetId) {
         return this.apiService.get(`/tweets/${tweetId}/comments`).pipe(map(data=>data.comments));
     }
@@ -50,5 +56,22 @@ export class TweetService {
             .pipe(map(data=>data.comments));
     }
 
+    getLikedTweets(username) {
+        return this.apiService.get(`/users/${username}/likes`).pipe(map(
+            data => data.likedTweets
+        ));
+    }
+
+    doRetweet(tweetId) {
+        return this.apiService.post(`/tweets/${tweetId}/retweet`).pipe(map(
+            data => data.rtcount
+        ));
+    }
+
+    undoRetweet(tweetId) {
+        return this.apiService.delete(`/tweets/${tweetId}/retweet`).pipe(map(
+            data => data.rtcount
+        ));
+    }
 
 } 

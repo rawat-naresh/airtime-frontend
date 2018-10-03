@@ -1,9 +1,0 @@
-p > span > span > a:hover{
-    color:green;
-}
-.active{
-    color:red;
-}
-.inactive{
-    color:inherit;
-}

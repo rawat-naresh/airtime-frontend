@@ -83,89 +83,20 @@
 <!-- Left Sidebar -->
 
 <div class="col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-12 col-xs-12">
-    <div class="ui-block">
-      <div class="ui-block-title">
-        <h6 class="title">Profile Intro</h6>
-      </div>
-      <div class="ui-block-content">
-        <a routerLink="/settings">Edit profile</a>
-        <ul class="widget w-personal-info item-block">
-          <li>
-            <span class="title">About Me:</span>
-            <span class="text">Hi, I’m James, I’m 36 and I work as a Digital Designer for the  “Daydreams” Agency in Pier 56.</span>
-          </li>
-          <li>
-            <span class="title">Favourite TV Shows:</span>
-            <span class="text">Breaking Good, RedDevil, People of Interest, The Running Dead, Found,  American Guy.</span>
-          </li>
-          <li>
-            <span class="title">Favourite Music Bands / Artists:</span>
-            <span class="text">Iron Maid, DC/AC, Megablow, The Ill, Kung Fighters, System of a Revenge.</span>
-          </li>
-        </ul>
-  
-      </div>
-    </div>
+    <app-user-intro></app-user-intro>
   
   </div>
   
   <!-- ... end Left Sidebar -->
     
-     <!-- Right Sidebar -->
+  <!-- Right Sidebar -->
 
-     <aside class="col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-xs-12">
-        
-        
-        <div class="ui-block">
-          <div class="ui-block-title">
-            <h6 class="title">Follow Suggestions</h6>
-            <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
-          </div>
-  
-          <ul class="widget w-friend-pages-added notification-list friend-requests">
-            <li class="inline-items">
-              <div class="author-thumb">
-                <img src="../../../assets/img/avatar38-sm.jpg" alt="author">
-              </div>
-              <div class="notification-event">
-                <a href="#" class="h6 notification-friend">Francine Smith</a>
-                <a href="#" class="accept-request">Follow</a>
-                
-              </div>
-              
-  
-            </li>
-            <li class="inline-items">
-                <div class="author-thumb">
-                  <img src="../../../assets/img/avatar38-sm.jpg" alt="author">
-                </div>
-                <div class="notification-event">
-                  <a href="#" class="h6 notification-friend">Francine Smith</a>
-                  <a href="#" class="accept-request">Follow</a>
-                </div>
-    
-              </li>
-              <li class="inline-items">
-                  <div class="author-thumb">
-                    <img src="../../../assets/img/avatar38-sm.jpg" alt="author">
-                  </div>
-                  <div class="notification-event">
-                    <a href="#" class="h6 notification-friend">Francine Smith</a>
-                    <a href="#" class="accept-request">Follow</a>
-                    
-                  </div>
-                  
-      
-                </li>
-  
-            
-          </ul>
-  
-        </div>
-      </aside>
-  
-      <!-- ... end Right Sidebar -->
-  
+  <aside class="col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-xs-12">
+    <app-suggestion-list></app-suggestion-list>
+  </aside>
+
+  <!-- ... end Right Sidebar -->
+
 
   </div>
 </div>

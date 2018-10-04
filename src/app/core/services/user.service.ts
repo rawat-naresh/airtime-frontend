@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject, ReplaySubject } from 'rxjs';
-import { distinctUntilChanged,tap } from 'rxjs/operators';
+import { distinctUntilChanged,tap,map } from 'rxjs/operators';
 
 import { ApiService } from './api.service';
 import { JwtService } from './jwt.service';
@@ -65,7 +65,16 @@ export class UserService {
     }
 
 
+    getFollowSuggestions() {
+        return this.apiService.get('/users/follow-suggestions').pipe(
+            map(data => data.suggestions)
+        );
+    }
 
+    followUser(username) {
+        return this.apiService.put(`/users/${username}/follow`).pipe(
+            map( (data)=>data.followingCount)
 
-
+        );
+    }
 } 

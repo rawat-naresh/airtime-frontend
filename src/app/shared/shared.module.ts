@@ -21,6 +21,9 @@ import { ShowAuthedDirective } from './show-authed.directive';
 import { FooterComponent } from './footer/footer.component';
 import { TrendingListComponent } from './trending-helpers/trending-list/trending-list.component';
 import { SuggestionListComponent } from './suggestion-helpers/suggestion-list/suggestion-list.component';
+import { SuggestionComponent } from './suggestion-helpers/suggestion/suggestion.component';
+
+import { UserIntroComponent } from './user-intro/user-intro.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -45,6 +48,8 @@ import { SuggestionListComponent } from './suggestion-helpers/suggestion-list/su
     TrendingListComponent ,
     FooterComponent,
     SuggestionListComponent,
+    SuggestionComponent,
+    UserIntroComponent,
     ShowAuthedDirective,
     TweetSplitterPipe
   ],
@@ -58,6 +63,7 @@ import { SuggestionListComponent } from './suggestion-helpers/suggestion-list/su
     FooterComponent,
     TrendingListComponent,
     SuggestionListComponent,
+    UserIntroComponent,
     TweetComponent,
     ShowAuthedDirective,
     TweetSplitterPipe,

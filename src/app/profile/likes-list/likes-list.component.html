@@ -1,6 +1,6 @@
 <div id="newsfeed-items-grid" >
     <div *ngIf="likedTweets?.length == 0">
-        <h5 class="text-center">No Retweets yet.</h5>
+        <h5 class="text-center">No Likes yet.</h5>
       </div>
   <div *ngFor="let likedTweet of likedTweets">
   <app-tweet [tweet]="likedTweet" ></app-tweet>

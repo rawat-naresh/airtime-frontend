@@ -1,6 +1,6 @@
 <div id="newsfeed-items-grid" >
   <div *ngIf="postedTweets?.length == 0">
-      <h5 class="text-center">No Retweets yet.</h5>
+      <h5 class="text-center">No Tweets yet.</h5>
     </div>
   <div *ngFor="let postedTweet of postedTweets">
   <app-tweet [tweet]="postedTweet"></app-tweet>

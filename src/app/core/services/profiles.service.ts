@@ -4,9 +4,12 @@ import { Observable } from 'rxjs';
 import { ApiService } from './api.service';
 import { Profile } from '../model/profile.model';
 import { map } from 'rxjs/operators';
+import { ReplaySubject } from 'rxjs';
 
 @Injectable()
 export class ProfilesService {
+  public followingReplaySubject = new ReplaySubject<number>(1);
+  public followingCount = this.followingReplaySubject.asObservable();
   constructor (
     private apiService: ApiService
   ) {}

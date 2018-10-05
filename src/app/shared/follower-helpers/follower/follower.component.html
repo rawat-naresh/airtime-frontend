@@ -1,3 +1,18 @@
-<p>
-  follower works!
-</p>
+<li>
+  <div class="author-thumb">
+    <img src="../../../assets/img/avatar15-sm.jpg" alt="author">
+  </div>
+  <div class="notification-event">
+    <a [routerLink]="['/profile',follower.username]" class="h6 notification-friend">@{{follower.username}} </a>
+    <span class="chat-message-item">{{follower.firstname}} {{follower.lastname}}</span>
+  </div>
+  <span class="notification-icon">
+    <button class="accept-request" [hidden]="follower.isFollowing">
+      Follow Back
+    </button>
+    <button class="accept-request" [hidden]="!follower.isFollowing">
+        Unfollow
+      </button>
+  </span>
+
+</li>

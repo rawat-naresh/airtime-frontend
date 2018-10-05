@@ -1,3 +1,17 @@
-<p>
-  follower-list works!
-</p>
+<div id="newsfeed-items-grid">
+  <div class="ui-block">
+      <div class="ui-block-title">
+        <h6 class="title">Followers</h6>
+        <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+      </div>
+
+
+      <ul class="notification-list friend-requests">
+        <h6 *ngIf = "followerList?.length == 0" class="text-center">No Followers yet.</h6>
+        <div *ngFor="let follower of followerList">
+          <app-following [user] = "follower"></app-following>
+        </div>
+      </ul>
+
+    </div>
+</div>

@@ -1,3 +1,18 @@
-<p>
-  following works!
-</p>
+<li>
+    <div class="author-thumb">
+      <img src="../../../assets/img/avatar15-sm.jpg" alt="author">
+    </div>
+    <div class="notification-event">
+      <a [routerLink]="['/profile',user.username]" class="h6 notification-friend">@{{user.username}} </a>
+      <span class="chat-message-item">{{user.firstname}} {{user.lastname}}</span>
+    </div>
+    <span class="notification-icon">
+      <button class="accept-request" [hidden]="user.isFollowing" (click)="followUser(user.username)">
+        Follow
+      </button>
+      <button class="accept-request" [hidden]="!user.isFollowing" (click)="unfollowUser(user.username)">
+          Unfollow
+        </button>
+    </span>
+
+</li>

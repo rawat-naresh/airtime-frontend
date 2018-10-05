@@ -77,4 +77,22 @@ export class UserService {
 
         );
     }
+
+    unfollowUser(username) {
+        return this.apiService.delete(`/users/${username}/unfollow`).pipe(
+            map((data)=>data.followingCount)
+        );
+    }
+
+    getFollowings(username) {
+        return this.apiService.get(`/users/${username}/following`).pipe(
+            map((data) => data.following)
+        );
+    }
+
+    getFollowers(username) {
+        return this.apiService.get(`/users/${username}/followers`).pipe(
+            map((data) => data.followers)
+        );
+    }
 } 

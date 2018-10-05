@@ -1,9 +1,10 @@
 <div class="ui-block">
   <div class="ui-block-title">
-    <h6 class="title">Profile Intro</h6>
+    <h6 class="title">Profile Intro</h6> 
+    <button class="btn btn-small btn-danger" [hidden]="(currentUser == profile.username) || profile.isFollowing ">Follow</button>
+    <button class="btn btn-small btn-danger" [hidden]="(currentUser == profile.username) || !profile.isFollowing">Unfollow</button>
   </div>
   <div class="ui-block-content">
-    <a routerLink="/settings">Edit profile</a>
     <ul class="widget w-personal-info item-block">
       <li>
         <span class="title">About Me:</span>

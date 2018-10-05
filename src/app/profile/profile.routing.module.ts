@@ -7,6 +7,8 @@ import { LikesListComponent } from './likes-list/likes-list.component';
 
 import { ProfileResolver } from './profile-resolver.service';
 import {ReTweetListComponent } from './retweet-list/retweet-list.component';
+import { FollowerListComponent } from 'src/app/shared/follower-helpers/follower-list/follower-list.component';
+import { FollowingListComponent } from 'src/app/shared/following-helpers/following-list/following-list.component';
 const profileRoutes:Routes = [
     {
         path:':username',
@@ -27,6 +29,14 @@ const profileRoutes:Routes = [
             {
                 path:'re-tweets',
                 component:ReTweetListComponent,
+            },
+            {
+                path:'followers',
+                component:FollowerListComponent,
+            },
+            {
+                path:'following',
+                component:FollowingListComponent,
             }
         ], 
     }

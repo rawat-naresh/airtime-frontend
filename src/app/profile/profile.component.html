@@ -19,13 +19,11 @@
                   <li>
                     <a
                       routerLinkActive="active"
-                      [routerLinkActiveOptions]="{exact:true}" 
                       [routerLink]="['/profile',profile.username,'likes']">Likes</a>
                   </li>
                   <li>
                     <a
                       routerLinkActive="active"
-                      [routerLinkActiveOptions]="{exact:true}" 
                       [routerLink]="['/profile',profile.username,'re-tweets']">Re-tweets</a>
                   </li>
                 </ul>
@@ -33,19 +31,13 @@
               <div class="col-lg-5 ml-auto col-md-5">
                 <ul class="profile-menu">
                   <li>
-                    <a [routerLink]="['/profile',profile.username,'followers']">Followers</a>
+                    <a routerLinkActive="active"
+                    [routerLink]="['/profile',profile.username,'followers']">Followers ({{profile.followersCount}})</a>
                   </li>
                   <li>
                     <a
                       routerLinkActive="active"
-                      [routerLinkActiveOptions]="{exact:true}" 
-                      [routerLink]="['/profile',profile.username,'following']">Following</a>
-                  </li>
-                  <li>
-                    <a
-                      routerLinkActive="active"
-                      [routerLinkActiveOptions]="{exact:true}" 
-                      [routerLink]="['/profile',profile.username,'settings']">Edit Profile</a>
+                      [routerLink]="['/profile',profile.username,'following']">Following ({{followingCount$ | async}})</a>
                   </li>
                 </ul>
               </div>
@@ -83,7 +75,7 @@
 <!-- Left Sidebar -->
 
 <div class="col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-12 col-xs-12">
-    <app-user-intro></app-user-intro>
+    <app-user-intro [profile]="profile"></app-user-intro>
   
   </div>
   

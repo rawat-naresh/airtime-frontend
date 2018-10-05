@@ -7,11 +7,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import {ToastModule} from 'primeng/toast';
 
-/*import { FollowerComponent } from './follower-helpers/follower/follower.component';
+import { FollowerComponent } from './follower-helpers/follower/follower.component';
 import { FollowerListComponent } from './follower-helpers/follower-list/follower-list.component';
 import { FollowingComponent } from './following-helpers/following/following.component';
 import { FollowingListComponent } from './following-helpers/following-list/following-list.component';
-import { FooterComponent } from './footer/footer.component';
+/*import { FooterComponent } from './footer/footer.component';
 import { TrendingComponent } from './trending-helpers/trending/trending.component';
 import { TrendingListComponent } from './trending-helpers/trending-list/trending-list.component';*/
 import { TweetComponent } from './tweet/tweet.component';
@@ -24,6 +24,8 @@ import { SuggestionListComponent } from './suggestion-helpers/suggestion-list/su
 import { SuggestionComponent } from './suggestion-helpers/suggestion/suggestion.component';
 
 import { UserIntroComponent } from './user-intro/user-intro.component';
+import { FollowComponent } from './buttons/follow/follow.component';
+import { UnfollowComponent } from './buttons/unfollow/unfollow.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -37,12 +39,12 @@ import { UserIntroComponent } from './user-intro/user-intro.component';
     // BrowserAnimationsModule
   ],
   declarations: [
-   /*  FollowerComponent, 
+    FollowerComponent, 
     FollowerListComponent, 
     FollowingComponent, 
     FollowingListComponent, 
-    FooterComponent, 
-    TrendingComponent, */
+    //FooterComponent, 
+    //TrendingComponent, 
     TweetComponent, 
     HeaderComponent, 
     TrendingListComponent ,
@@ -51,7 +53,9 @@ import { UserIntroComponent } from './user-intro/user-intro.component';
     SuggestionComponent,
     UserIntroComponent,
     ShowAuthedDirective,
-    TweetSplitterPipe
+    TweetSplitterPipe,
+    FollowComponent,
+    UnfollowComponent
   ],
   exports:[
     CommonModule,
@@ -65,6 +69,10 @@ import { UserIntroComponent } from './user-intro/user-intro.component';
     SuggestionListComponent,
     UserIntroComponent,
     TweetComponent,
+    FollowerComponent, 
+    FollowerListComponent, 
+    FollowingComponent, 
+    FollowingListComponent, 
     ShowAuthedDirective,
     TweetSplitterPipe,
     // BrowserAnimationsModule,

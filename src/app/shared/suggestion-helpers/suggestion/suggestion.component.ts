@@ -1,6 +1,9 @@
 import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../../../core/services/user.service';
 import { ProfilesService } from 'src/app/core/services/profiles.service';
+import { concatMap,tap } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-suggestion',
@@ -12,7 +15,8 @@ export class SuggestionComponent implements OnInit {
   @Output() followed = new EventEmitter<Object>();
   constructor(
     private userService:UserService,
-    private profileService:ProfilesService
+    private profileService:ProfilesService,
+    private router:Router,
   ) { }
 
   ngOnInit() {
@@ -20,12 +24,19 @@ export class SuggestionComponent implements OnInit {
   }
 
   followUser(username) {
-    this.userService.followUser(username).subscribe(
-      (data) => {
-        //get following count in data.
-        this.followed.emit(this.suggestion);
-        this.profileService.followingReplaySubject.next(data);
+
+    this.userService.isAuthenticated.pipe(concatMap((authenticated) => {
+      if(!authenticated){
+        this.router.navigateByUrl('');
+        return of(null);
       }
-    );
+      return this.userService.followUser(username).pipe(
+        tap((data) => {
+          //get following count in data.
+          this.followed.emit(this.suggestion);
+          this.profileService.followingReplaySubject.next(data);
+        })
+      );
+    })).subscribe();
   }
 }

@@ -14,5 +14,6 @@ export interface Profile {
     followingCount: number,
     tweets: Tweet,
     isFollowing:boolean,
+    country:string,
     createdAt: Date,
 }

@@ -11,7 +11,7 @@ import { of } from 'rxjs';
 //   styleUrls: ['./suggestion-list.component.css']
 })
 export class SuggestionComponent implements OnInit {
-  @Input() suggestion:Object;
+  @Input() suggestion:any;
   @Output() followed = new EventEmitter<Object>();
   constructor(
     private userService:UserService,

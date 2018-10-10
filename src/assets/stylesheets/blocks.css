@@ -1775,7 +1775,8 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
   max-width: 100%; }
 
 .bg-account:before {
-  background-image: url("../img/top-header3.png"); }
+  /* background-image: url("../img/top-header3.png"); */
+ }
 
 
 .main-header-content {

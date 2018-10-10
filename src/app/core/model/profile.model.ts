@@ -15,5 +15,6 @@ export interface Profile {
     tweets: Tweet,
     isFollowing:boolean,
     country:string,
+    fullname:string,
     createdAt: Date,
 }

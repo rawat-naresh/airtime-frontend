@@ -24,8 +24,8 @@ import { SuggestionListComponent } from './suggestion-helpers/suggestion-list/su
 import { SuggestionComponent } from './suggestion-helpers/suggestion/suggestion.component';
 
 import { UserIntroComponent } from './user-intro/user-intro.component';
-import { FollowComponent } from './buttons/follow/follow.component';
-import { UnfollowComponent } from './buttons/unfollow/unfollow.component';
+// import { FollowComponent } from './buttons/follow/follow.component';
+// import { UnfollowComponent } from './buttons/unfollow/unfollow.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -54,8 +54,8 @@ import { UnfollowComponent } from './buttons/unfollow/unfollow.component';
     UserIntroComponent,
     ShowAuthedDirective,
     TweetSplitterPipe,
-    FollowComponent,
-    UnfollowComponent
+    // FollowComponent,
+    // UnfollowComponent
   ],
   exports:[
     CommonModule,

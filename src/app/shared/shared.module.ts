@@ -12,13 +12,13 @@ import { FollowerListComponent } from './follower-helpers/follower-list/follower
 import { FollowingComponent } from './following-helpers/following/following.component';
 import { FollowingListComponent } from './following-helpers/following-list/following-list.component';
 /*import { FooterComponent } from './footer/footer.component';
-import { TrendingComponent } from './trending-helpers/trending/trending.component';
 import { TrendingListComponent } from './trending-helpers/trending-list/trending-list.component';*/
 import { TweetComponent } from './tweet/tweet.component';
 import { TweetSplitterPipe } from './tweet/tweet-splitter.pipe';
 import { HeaderComponent } from './header/header.component';
 import { ShowAuthedDirective } from './show-authed.directive';
 import { FooterComponent } from './footer/footer.component';
+import { TrendingComponent } from './trending-helpers/trending/trending.component';
 import { TrendingListComponent } from './trending-helpers/trending-list/trending-list.component';
 import { SuggestionListComponent } from './suggestion-helpers/suggestion-list/suggestion-list.component';
 import { SuggestionComponent } from './suggestion-helpers/suggestion/suggestion.component';
@@ -36,6 +36,7 @@ import { UserIntroComponent } from './user-intro/user-intro.component';
     HttpClientModule,
     RouterModule,
     ToastModule,
+    
     // BrowserAnimationsModule
   ],
   declarations: [
@@ -44,7 +45,7 @@ import { UserIntroComponent } from './user-intro/user-intro.component';
     FollowingComponent, 
     FollowingListComponent, 
     //FooterComponent, 
-    //TrendingComponent, 
+    TrendingComponent, 
     TweetComponent, 
     HeaderComponent, 
     TrendingListComponent ,
@@ -75,6 +76,7 @@ import { UserIntroComponent } from './user-intro/user-intro.component';
     FollowingListComponent, 
     ShowAuthedDirective,
     TweetSplitterPipe,
+    TrendingComponent,
     // BrowserAnimationsModule,
     ToastModule,
 

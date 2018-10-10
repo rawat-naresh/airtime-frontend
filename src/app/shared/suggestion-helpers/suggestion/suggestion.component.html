@@ -5,8 +5,8 @@
     <div class="notification-event">
         <span class="h6 notification-friend">{{suggestion.firstname}} {{suggestion.lastname}}</span>
         <small><a [routerLink]="['/profile',suggestion.username]" class="h6 notification-friend">@{{suggestion.username}}</a></small>
-        <button  class="accept-request" (click)="followUser(suggestion.username)" [hidden]="isFollowed">Follow</button>
-        <button  class="accept-request" [hidden] = "!isFollowed" disabled>Followed</button>
+        <button  class="accept-request" (click)="followUser(suggestion.username)" >Follow</button>
+        <!-- <button  class="accept-request" [hidden] = "!isFollowed" disabled>Followed</button> -->
 
     </div>
 </li>

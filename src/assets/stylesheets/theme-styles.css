@@ -455,7 +455,7 @@
     opacity: 1;
     z-index: auto; }
   .landing-page .content-bg:before {
-    background: url("../img/landing-users.png") repeat 0 0; }
+    background: url("/assets/img/landing-users.png") repeat 0 0; }
   .landing-page .content-bg {
     background-color: rgba(255, 94, 58, 0.95);
     animation-name: sidedownscroll; }

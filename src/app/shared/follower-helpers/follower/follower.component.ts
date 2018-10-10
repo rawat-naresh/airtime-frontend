@@ -6,7 +6,7 @@ import { Component, OnInit,Input } from '@angular/core';
   styleUrls: ['./follower.component.css']
 })
 export class FollowerComponent implements OnInit {
-  @Input() follower:Object;
+  @Input() follower:any;
   constructor() { }
 
   ngOnInit() {

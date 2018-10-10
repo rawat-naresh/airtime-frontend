@@ -1775,7 +1775,7 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
   max-width: 100%; }
 
 .bg-account:before {
-  background-image: url("src/assets/img/top-header3.png");
+  background-image: url("assets/img/top-header3.png");
  }
 
 
@@ -4490,7 +4490,7 @@ ol ol li {
 
 .today-events-thumb {
   position: relative;
-  background-image: url("src/assets/img/bg-event-day.jpg");
+  background-image: url("assets/img/bg-event-day.jpg");
   text-align: center;
   padding: 25px;
   color: #fff; }
